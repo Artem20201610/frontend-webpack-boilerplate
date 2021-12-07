@@ -17,6 +17,10 @@
       "name": "Plamen Nikolov",
       "email": "me@pnikoloff.com",
       "url": "https://pnikoloff.com"
+    },
+    {
+      "name": "Artem Iemelianov",
+      "email": "ae1666528@gmail.com"
     }
   ],
   "devDependencies": {
@@ -35,6 +39,7 @@
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
+    "htmlhint": "^1.0.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
@@ -74,8 +79,10 @@
     "bundle": "npm install && npm run watch",
     "dev": "webpack serve --config configuration/webpack.dev.config.js --mode=development",
     "production": "webpack --config configuration/webpack.prod.config.js --mode=production",
+    "lint:html": "npx htmlhint --config ./.linthtmlrc.json ./src/**/*.html",
     "lint:sass": "sass-lint -v -q",
     "lint:js": "eslint --ext .js src/js/",
+    "lint": "npm run lint:html && npm run lint:sass && npm run lint:js",
     "stats": "webpack --config configuration/webpack.prod.config.js --mode=production --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json"
   },
   "target": "web"

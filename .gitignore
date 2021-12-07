@@ -9,6 +9,7 @@
 .project
 .settings
 .idea
+.vscode
 *.swp
 tags
 nbproject/*
